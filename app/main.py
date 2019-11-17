@@ -40,6 +40,12 @@ def get_stores():
                     'tags': 'sake|sushi'
                 },
                 {
+                    'name': 'ダルマ',
+                    'area': '池袋',
+                    'url': 'https://tabelog.com/tokyo/A1305/A130501/13149222/',
+                    'tags': 'sake|fish'
+                },
+                {
                     'name': '稲水器 あまてらす',
                     'area': '池袋',
                     'url': 'https://tabelog.com/tokyo/A1305/A130501/13211375/',

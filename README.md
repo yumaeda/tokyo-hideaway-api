@@ -9,7 +9,7 @@ docker build -t yumaeda/kojinten .
 ## Run a container based on the image:
 
 ```bash
-docker run -d --name kojinten_container -p 80:80 kojinten
+docker run -d --name kojinten_container -p 80:80 yumaeda/kojinten
 ```
 
 ## Push the image to the Docker Hub.
