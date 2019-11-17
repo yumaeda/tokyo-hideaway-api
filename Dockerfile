@@ -2,7 +2,8 @@ FROM tiangolo/uwsgi-nginx:python3.7
 LABEL maintainer="Yukitaka Maeda <yumaeda@gmail.com>"
 
 # Install Flask.
-RUN pip install flask
+COPY ./requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt
 
 # Set environment variables.
 ENV STATIC_URL=/static
