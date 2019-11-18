@@ -6,19 +6,27 @@ import sys
 from flask import Flask, jsonify
 app = Flask(__name__)
 
+from aws_config import AwsConfig
+
 # CONSTANTS
 SECRET_NAME = "RDSSecret3683CA93-LpqX2CRjubS6"
-REGION_NAME = "ap-northeast-1"
 
 @app.route('/')
 def index():
     version  = '{}.{}'.format(sys.version_info.major, sys.version_info.minor)
     html     = '<h1>Kojinten [Python {}]</h1>'.format(version)
+
+    aws_config = AwsConfig().read()
+    session    = boto3.session.Session(
+        aws_access_key_id=aws_config['access_key_id'],
+        aws_secret_access_key=aws_config['secret_access_key'],
+        region_name=aws_config['region']
+    )
+
     """
-    session    = boto3.session.Session()
     secret_mgr = session.client(
         service_name='secretsmanager',
-        region_name=REGION_NAME
+        region_name=aws_config['region']
     )
 
     try:

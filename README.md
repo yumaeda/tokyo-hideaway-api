@@ -1,5 +1,15 @@
 # uwsgi-nginx-flask
 
+## Install ansible
+```bash
+brew install ansible
+```
+
+## Encrypt AWS configuration file.
+```bash
+ansible-vault encrypt ./app/.aws_config.json
+```
+
 ## Build an image:
 
 ```bash
